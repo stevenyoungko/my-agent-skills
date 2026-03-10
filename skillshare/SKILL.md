@@ -9,6 +9,7 @@ description: |
   Use when: managing skills across AI tools, "skillshare" CLI, skill sync/install/search,
   project skills setup, security audit, web dashboard, or troubleshooting.
 argument-hint: "[command] [target] [--dry-run] [-p|-g]"
+disable-model-invocation: true
 ---
 
 # Skillshare CLI
@@ -25,19 +26,19 @@ Force with `-p` (project) or `-g` (global).
 
 ## Commands
 
-| Category | Commands | Project? |
-|----------|----------|:--------:|
-| **Inspect** | `status`, `diff`, `list`, `doctor` | ✓ (auto) |
-| **Sync** | `sync`, `collect` | ✓ (auto) |
-| **Remote** | `push`, `pull` | ✗ (use git) |
-| **Skills** | `new`, `install`, `uninstall`, `update`, `check`, `search` | ✓ (`-p`) |
-| **Targets** | `target add/remove/list` | ✓ (`-p`) |
-| **Security** | `audit [name]` | ✓ (`-p`) |
-| **Trash** | `trash list\|restore\|delete\|empty` | ✓ (`-p`) |
-| **Log** | `log [--audit] [--tail N]` | ✓ (`-p`) |
-| **Backup** | `backup`, `restore` | ✗ |
-| **Web UI** | `ui` (`-g` global, `-p` project) | ✓ (`-p`) |
-| **Upgrade** | `upgrade [--cli\|--skill]` | — |
+| Category     | Commands                                                   |  Project?   |
+| ------------ | ---------------------------------------------------------- | :---------: |
+| **Inspect**  | `status`, `diff`, `list`, `doctor`                         |  ✓ (auto)   |
+| **Sync**     | `sync`, `collect`                                          |  ✓ (auto)   |
+| **Remote**   | `push`, `pull`                                             | ✗ (use git) |
+| **Skills**   | `new`, `install`, `uninstall`, `update`, `check`, `search` |  ✓ (`-p`)   |
+| **Targets**  | `target add/remove/list`                                   |  ✓ (`-p`)   |
+| **Security** | `audit [name]`                                             |  ✓ (`-p`)   |
+| **Trash**    | `trash list\|restore\|delete\|empty`                       |  ✓ (`-p`)   |
+| **Log**      | `log [--audit] [--tail N]`                                 |  ✓ (`-p`)   |
+| **Backup**   | `backup`, `restore`                                        |      ✗      |
+| **Web UI**   | `ui` (`-g` global, `-p` project)                           |  ✓ (`-p`)   |
+| **Upgrade**  | `upgrade [--cli\|--skill]`                                 |      —      |
 
 **Workflow:** Most commands require `sync` afterward to distribute changes.
 
@@ -67,15 +68,15 @@ See [audit.md](references/audit.md) and [trash.md](references/trash.md) for deta
 
 ## References
 
-| Topic | File |
-|-------|------|
-| Init flags (global + project) | [init.md](references/init.md) |
-| Sync/collect/push/pull | [sync.md](references/sync.md) |
-| Install/update/uninstall/new | [install.md](references/install.md) |
-| Status/diff/list/search/check | [status.md](references/status.md) |
-| Security audit | [audit.md](references/audit.md) |
-| Trash (soft-delete) | [trash.md](references/trash.md) |
-| Operation log | [log.md](references/log.md) |
-| Target management | [targets.md](references/targets.md) |
-| Backup/restore | [backup.md](references/backup.md) |
-| Troubleshooting | [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) |
+| Topic                         | File                                                |
+| ----------------------------- | --------------------------------------------------- |
+| Init flags (global + project) | [init.md](references/init.md)                       |
+| Sync/collect/push/pull        | [sync.md](references/sync.md)                       |
+| Install/update/uninstall/new  | [install.md](references/install.md)                 |
+| Status/diff/list/search/check | [status.md](references/status.md)                   |
+| Security audit                | [audit.md](references/audit.md)                     |
+| Trash (soft-delete)           | [trash.md](references/trash.md)                     |
+| Operation log                 | [log.md](references/log.md)                         |
+| Target management             | [targets.md](references/targets.md)                 |
+| Backup/restore                | [backup.md](references/backup.md)                   |
+| Troubleshooting               | [TROUBLESHOOTING.md](references/TROUBLESHOOTING.md) |

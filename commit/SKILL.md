@@ -1,6 +1,7 @@
 ---
 name: commit-message-helper
 description: Helps write Git commit messages following the Conventional Commits specification. Use this skill when the user asks to commit changes, write commit messages, or mentions git commits.
+disable-model-invocation: true
 ---
 
 # Commit Message Helper
