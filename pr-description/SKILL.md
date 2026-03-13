@@ -1,6 +1,7 @@
 ---
 name: pr-description
 description: Helps write PR descriptions. Use this skill when the user asks to write a PR description, or mentions pull request.
+disable-model-invocation: true
 ---
 
 # PR Description Helper
