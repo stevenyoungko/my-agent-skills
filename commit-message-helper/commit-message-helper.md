@@ -10,7 +10,7 @@ When writing commit messages, follow these rules:
 
 ## Format
 
-<type>(<scope>): <subject>
+<type>(<scope>): <ticket-number>-<subject>
 
 <body>
 
@@ -34,11 +34,12 @@ When writing commit messages, follow these rules:
 3. Do not end the subject line with a period
 4. Separate subject from body with a blank line
 5. Use the body to explain what and why, not how
+6. Always include the ticket number (e.g. SL-12345) after the colon, before the subject. Infer it from the branch name if not provided.
 
 ## Examples
 
 Good:
-feat(auth): add OAuth2 login support
+feat(auth): SL-50436-use POST for OmniAuth login requests
 
 Implement OAuth2 authentication flow to allow users to log in
 with their Google or GitHub accounts.
@@ -47,3 +48,4 @@ Closes #123
 
 Bad:
 updated stuff
+feat(auth): add OAuth2 login support (missing ticket number)
