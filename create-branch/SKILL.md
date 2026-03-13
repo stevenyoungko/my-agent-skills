@@ -15,6 +15,11 @@ Supported prefixes: `feature`, `hotfix`, `integration`
 - Default prefix is `feature` unless the user specifies otherwise
 - If the user mentions "hotfix" or "integration", use the corresponding prefix
 
+## Base Branch
+
+- `feature` and `integration` branches must be created from `dev`
+- `hotfix` branches must be created from `master`
+
 ## Steps
 
 1. Determine the prefix (`feature` by default, or as specified by the user)
@@ -29,7 +34,9 @@ Supported prefixes: `feature`, `hotfix`, `integration`
    - Trim leading/trailing hyphens
    - The final slug (after the ticket number) should be no longer than 40 characters
 4. Construct the branch name: `<prefix>/SL-XXXXX-<kebab-case-title>`
-5. Run `git checkout -b <branch-name>` to create and switch to the branch
+5. Determine the base branch:
+   - If prefix is `feature` or `integration`: run `git fetch origin dev && git checkout -b <branch-name> origin/dev`
+   - If prefix is `hotfix`: run `git fetch origin master && git checkout -b <branch-name> origin/master`
 6. Confirm the branch was created successfully
 
 ## Examples
