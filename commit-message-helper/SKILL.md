@@ -5,15 +5,13 @@ description: Helps write Git commit messages following the Conventional Commits 
 
 # Commit Message Helper
 
+When this skill is invoked, write the commit message following the rules below and immediately execute the git commit.
+
 When writing commit messages, follow these rules:
 
 ## Format
 
 <type>(<scope>): <ticket-number>-<subject>
-
-<body>
-
-<footer>
 
 ## Types
 
@@ -39,11 +37,6 @@ When writing commit messages, follow these rules:
 
 Good:
 feat(auth): SL-50436-use POST for OmniAuth login requests
-
-Implement OAuth2 authentication flow to allow users to log in
-with their Google or GitHub accounts.
-
-Closes #123
 
 Bad:
 updated stuff
