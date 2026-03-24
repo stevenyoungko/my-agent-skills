@@ -4,26 +4,26 @@ Initialize skillshare configuration (global or project).
 
 ## Global Init
 
-**Source:** Always `~/.config/skillshare/skills` (use `--source` only if user explicitly requests).
+**Source:** `~/.config/skillshare/skills` by default. Respects `$XDG_CONFIG_HOME` — if set, uses `$XDG_CONFIG_HOME/skillshare/skills`. Use `--source` only if user explicitly requests a custom path.
 
 ### Flags
 
 | Flag | Description |
 |------|-------------|
-| `--copy-from <name\|path>` | Import skills from target/path |
+| `-c, --copy-from <name\|path>` | Import skills from target/path |
 | `--no-copy` | Start with empty source |
-| `--targets "claude,cursor"` | Specific targets |
+| `-t, --targets "claude,cursor"` | Specific targets |
 | `--all-targets` | All detected targets |
 | `--no-targets` | Skip target setup |
 | `--git` | Initialize git repo |
 | `--no-git` | Skip git init |
-| `--discover` | Discover new AI tools (interactive) |
+| `-d, --discover` | Discover new AI tools (interactive) |
 | `--discover --select "a,b"` | Non-interactive discovery |
-| `--source <path>` | Custom source path |
-| `--remote <url>` | Set git remote |
+| `-s, --source <path>` | Custom source path |
+| `--remote <url>` | Set git remote (implies --git) |
 | `--skill` | Install built-in skillshare skill (opt-in) |
 | `--no-skill` | Skip built-in skill installation |
-| `--dry-run` | Preview changes |
+| `-n, --dry-run` | Preview changes |
 
 ### AI Usage (Non-Interactive)
 
@@ -58,10 +58,10 @@ Creates `.skillshare/` in current directory with `config.yaml`, `.gitignore`, an
 | Flag | Description |
 |------|-------------|
 | `-p, --project` | Enable project mode |
-| `--targets "claude-code,cursor"` | Specific targets (non-interactive) |
-| `--discover` | Discover new AI tools |
+| `-t, --targets "claude,cursor"` | Specific targets (non-interactive) |
+| `-d, --discover` | Discover new AI tools |
 | `--discover --select "a,b"` | Non-interactive discovery |
-| `--dry-run, -n` | Preview changes |
+| `-n, --dry-run` | Preview changes |
 
 **Note:** `--copy-from`, `--git`, `--source` are not available in project mode.
 
@@ -69,7 +69,7 @@ Creates `.skillshare/` in current directory with `config.yaml`, `.gitignore`, an
 
 ```bash
 # Initialize with specific targets
-skillshare init -p --targets "claude-code,cursor"
+skillshare init -p --targets "claude,cursor"
 
 # Verify
 skillshare status
